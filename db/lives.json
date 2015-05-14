@@ -1,0 +1,68 @@
+[
+  {
+    "name": "seedling",
+    "min": 0,
+    "max": 10,
+    "url": "assets/tree1.svg"
+  },
+  {
+    "name": "sproutling",
+    "min": 11,
+    "max": 25,
+    "url": "assets/tree2.svg"
+  },
+  {
+    "name": "baby sapling",
+    "min": 26,
+    "max": 100,
+    "url": "assets/tree3.svg"
+  },
+  {
+    "name": "teen sapling",
+    "min": 101,
+    "max": 500,
+    "url": "assets/tree4.svg"
+  },
+  {
+    "name": "big sapling",
+    "min": 501,
+    "max": 1000,
+    "url": "assets/tree5.svg"
+  },
+  {
+    "name": "baby oak",
+    "min": 1001,
+    "max": 2000,
+    "url": "assets/tree6.svg"
+  },
+  {
+    "name": "adolescent oak",
+    "min": 2001,
+    "max": 4000,
+    "url": "assets/tree7.svg"
+  },
+  {
+    "name": "teen oak",
+    "min": 4001,
+    "max": 8000,
+    "url": "assets/tree8.svg"
+  },
+  {
+    "name": "adult oak",
+    "min": 8001,
+    "max": 10000,
+    "url": "assets/tree9.svg"
+  },
+  {
+    "name": "mature oak",
+    "min": 10001,
+    "max": 20000,
+    "url": "assets/tree10.svg"
+  },
+  {
+    "name": "beanstalk",
+    "min": 20001,
+    "max": 25000,
+    "url": "assets/tree11.svg"
+  }
+]
