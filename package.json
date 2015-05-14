@@ -1,8 +1,8 @@
 {
-  "name": "aphrodite",
+  "name": "treeServer",
   "version": "0.0.1",
-  "homepage": "https://github.com/coding-house-apr2015/aphrodite",
-  "author": "Chyld Medford <chyld.medford@gmail.com>",
+  "homepage": "https://github.com/Spinaldash/treeServer",
+  "author": "Michael J. Perez <mjosephvp@gmail.com>",
   "license": "BSD",
   "engines": {
     "node": "0.12.x"
