@@ -32,8 +32,7 @@ describe('GET /trees', function(){
 
   beforeEach(function(done){
     var db = server.app.environment.MONGO_URL.split('/')[3];
-    CP.execFile(Path.join(__dirname, '../../../../scripts/clean-db.sh'), [db], {cwd: Path.join(__dirname, '../../../../scripts')}, function(a, b, c){
-      // console.log("~~~~~~~~~~~~~~", a, b, c);
+    CP.execFile(Path.join(__dirname, '../../../../scripts/clean-db.sh'), [db], {cwd: Path.join(__dirname, '../../../../scripts')}, function(){
       done();
     });
   });
@@ -51,13 +50,13 @@ describe('GET /trees', function(){
       done();
     });
   });
-
-  // it('should encounter db error', function(done){
-  //   var stub = Sinon.stub(Tree, 'find').yields(new Error());
-  //   server.inject({method: 'GET', url: '/lives', credentials: {_id: 'a00000000000000000000001'}}, function(response){
-  //     expect(response.statusCode).to.equal(400);
-  //     stub.restore();
-  //     done();
-  //   });
-  // });
+  // sinon to create coverage
+  it('should encounter db error', function(done){
+    var stub = Sinon.stub(Tree, 'find').yields(new Error());
+    server.inject({method: 'GET', url: '/trees', credentials: {_id: 'a00000000000000000000001'}}, function(response){
+      expect(response.statusCode).to.equal(400);
+      stub.restore();
+      done();
+    });
+  });
 });
