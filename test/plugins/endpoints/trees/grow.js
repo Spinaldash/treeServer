@@ -73,15 +73,41 @@ describe('PUT /trees/{treeId}/grow', function(){
     });
   });
 
-  it('should cause the tree to grow 26 points', function(done){
+  it('should cause the tree to grow 25 points', function(done){
     var stub = Sinon.stub(Math, 'random');
     stub.onCall(0).returns(1).onCall(1).returns(0.5);
     server.inject({method: 'PUT', url: '/trees/ab0000000000000000000001/grow', credentials: {_id: 'a00000000000000000000001'}}, function(response){
       expect(response.statusCode).to.equal(200);
       expect(response.result.health).to.be.equal(100);
-      expect(response.result.height).to.be.equal(27);
+      expect(response.result.height).to.be.equal(26);
       stub.restore();
       done();
     });
   });
+
+  it('should cause the tree to die', function(done){
+    var stub = Sinon.stub(Math, 'random');
+    stub.onCall(0).returns(0).onCall(1).returns(2);
+    server.inject({method: 'PUT', url: '/trees/a00000000000000000000004/grow', credentials: {_id: 'a00000000000000000000001'}}, function(response){
+      expect(response.statusCode).to.equal(200);
+      expect(response.result.health).to.be.equal(0);
+      expect(response.result.height).to.be.equal(0);
+      stub.restore();
+      done();
+    });
+  });
+
+  it('should hit the tree max height limit', function(done){
+    var stub = Sinon.stub(Math, 'random');
+    stub.onCall(0).returns(1).onCall(1).returns(2);
+    server.inject({method: 'PUT', url: '/trees/a00000000000000000000003/grow', credentials: {_id: 'a00000000000000000000001'}}, function(response){
+      expect(response.statusCode).to.equal(200);
+      expect(response.result.health).to.be.equal(55);
+      expect(response.result.height).to.be.equal(50000);
+      stub.restore();
+      done();
+    });
+  });
+
+
 });
