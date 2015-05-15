@@ -108,6 +108,4 @@ describe('PUT /trees/{treeId}/grow', function(){
       done();
     });
   });
-
-
 });
