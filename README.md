@@ -1,8 +1,8 @@
 # treeServer
 ### Testing
 
-[![Build Status](https://travis-ci.org/coding-house-apr2015/trees-node.svg)](https://travis-ci.org/coding-house-apr2015/trees-node)
-[![Coverage Status](https://coveralls.io/repos/coding-house-apr2015/trees-node/badge.svg?branch=master)](https://coveralls.io/r/coding-house-apr2015/trees-node?branch=master)
+[![Build Status](https://travis-ci.org/Spinaldash/treeServer.svg?branch=master)](https://travis-ci.org/Spinaldash/treeServer)
+[![Coverage Status](https://coveralls.io/repos/Spinaldash/treeServer/badge.svg)](https://coveralls.io/r/Spinaldash/treeServer)
 
 ### Technologies
 
