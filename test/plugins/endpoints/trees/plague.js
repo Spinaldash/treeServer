@@ -44,9 +44,9 @@ describe('PUT /trees/plague', function(){
   });
 
   it('should plague the players trees', function(done){
-    server.inject({method: 'PUT', url: '/trees/plague', credentials: {_id: 'a00000000000000000000001'}}, function(response){
+    server.inject({method: 'PUT', url: '/trees/plague', credentials: {_id: 'a00000000000000000000001'}, payload: {damage: 10, name: 'Wildfire'}}, function(response){
       expect(response.statusCode).to.equal(200);
-      // expect(response.result.health).to.be.within(75, 100);
+      expect(response.result.length).to.equal(4);
       // expect(response.result.height).to.be.within(1, 50);
       done();
     });
