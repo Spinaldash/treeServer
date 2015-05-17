@@ -51,4 +51,26 @@ describe('PUT /trees/plague', function(){
       done();
     });
   });
+
+  it('should cause an err on find', function(done){
+    var stub = Sinon.stub(Tree, 'find').yields(new Error());
+    server.inject({method: 'PUT', url: '/trees/plague', credentials: {_id: 'a00000000000000000000001'}, payload: {damage: 10, name: 'Wildfire'}}, function(response){
+      expect(response.statusCode).to.equal(400);
+      // expect(response.result.length).to.equal(4);
+      // expect(response.result.height).to.be.within(1, 50);
+      stub.restore();
+      done();
+    });
+  });
+
+  it('should cause an err on save', function(done){
+    var stub = Sinon.stub(Tree.prototype, 'save').yields(new Error());
+    server.inject({method: 'PUT', url: '/trees/plague', credentials: {_id: 'a00000000000000000000001'}, payload: {damage: 10, name: 'Wildfire'}}, function(response){
+      expect(response.statusCode).to.equal(400);
+      // expect(response.result.length).to.equal(4);
+      // expect(response.result.height).to.be.within(1, 50);
+      stub.restore();
+      done();
+    });
+  });
 });
